@@ -210,8 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868947b42e4304a5abf07e7c4689c212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   hitEffect: {fileID: 5729807276960985695, guid: 8905aace66839407aa3e20c973038a0a, type: 3}
+  applyCameraShake: 1
 --- !u!114 &3828609341238605652
 MonoBehaviour:
   m_ObjectHideFlags: 0
