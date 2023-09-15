@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: EnemyWaveConfig 1
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 6380658280617199419, guid: 8e17f87a793bd43da8a948d601cf914f, type: 3}
-  - {fileID: 6380658280617199419, guid: 8e17f87a793bd43da8a948d601cf914f, type: 3}
-  - {fileID: 6380658280617199419, guid: 8e17f87a793bd43da8a948d601cf914f, type: 3}
-  - {fileID: 6380658280617199419, guid: 8e17f87a793bd43da8a948d601cf914f, type: 3}
-  - {fileID: 6380658280617199419, guid: 8e17f87a793bd43da8a948d601cf914f, type: 3}
+  - {fileID: 6380658280617199419, guid: fb640e26696db436c9a24da485d237e6, type: 3}
+  - {fileID: 6380658280617199419, guid: fb640e26696db436c9a24da485d237e6, type: 3}
+  - {fileID: 6380658280617199419, guid: fb640e26696db436c9a24da485d237e6, type: 3}
+  - {fileID: 6380658280617199419, guid: fb640e26696db436c9a24da485d237e6, type: 3}
+  - {fileID: 6380658280617199419, guid: fb640e26696db436c9a24da485d237e6, type: 3}
   pathPrefab: {fileID: 2919574285213236470, guid: 9cbb96d5f20484df08e8dd92f540f42f, type: 3}
   moveSpeed: 5
   timeBetweenSpawns: 0.5
