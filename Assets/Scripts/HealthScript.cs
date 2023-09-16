@@ -7,18 +7,26 @@ public class HealthScript : MonoBehaviour
     [SerializeField] int health = 100;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake = false;
+
+    [SerializeField] bool isPlayer = false;
+
+    [SerializeField] int scoreValue = 50;
     CameraShake cameraShake;
 
     AudioPlayer audioPlayer;
 
+    ScoreKeeper scoreKeeper;
+
     void Awake() {
         cameraShake = Camera.main.GetComponent<CameraShake>();
-         audioPlayer = FindObjectOfType<AudioPlayer>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         if (damageDealer != null) {
+            Debug.Log("Damage: " + damageDealer.GetDamage());
             TakeDamage(damageDealer.GetDamage());
             PlayHitEffect();
             ShakeCamera();
@@ -26,20 +34,31 @@ public class HealthScript : MonoBehaviour
         }
     }
 
+    public int GetHealth() {
+        return health;
+    }
+
     void TakeDamage(int damage) {
         health -= damage;
+        Debug.Log("Health: " + health);
         if (audioPlayer != null) {
             audioPlayer.PlayDamageSFX();
         }
         if (health <= 0) {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    void Die() {
+        if (!isPlayer && scoreKeeper != null) {
+                scoreKeeper.ModifyScore(scoreValue);
+        }  
+        Destroy(gameObject);
     }
 
     void PlayHitEffect() {
         if (hitEffect != null) {
             ParticleSystem instance = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            //instance.Play();
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
