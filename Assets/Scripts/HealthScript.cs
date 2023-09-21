@@ -26,7 +26,6 @@ public class HealthScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         if (damageDealer != null) {
-            Debug.Log("Damage: " + damageDealer.GetDamage());
             TakeDamage(damageDealer.GetDamage());
             PlayHitEffect();
             ShakeCamera();
@@ -40,7 +39,6 @@ public class HealthScript : MonoBehaviour
 
     void TakeDamage(int damage) {
         health -= damage;
-        Debug.Log("Health: " + health);
         if (audioPlayer != null) {
             audioPlayer.PlayDamageSFX();
         }

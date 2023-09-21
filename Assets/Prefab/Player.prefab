@@ -261,7 +261,7 @@ MonoBehaviour:
   paddingLeft: 0.5
   paddingRight: 0.5
   paddingTop: 5
-  paddingBottom: 1
+  paddingBottom: 2
 --- !u!114 &-7072794191106752041
 MonoBehaviour:
   m_ObjectHideFlags: 0
